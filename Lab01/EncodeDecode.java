@@ -105,7 +105,7 @@ public class EncodeDecode {
                 }
             } else {
                 if(ascii < 48) {
-                    ascii = ascii - 10;
+                    ascii = ascii + 10;
                     backch = (char) ascii;
                 } else {
                     backch = (char) ascii;
@@ -127,4 +127,3 @@ public class EncodeDecode {
     }
 
 }
-
