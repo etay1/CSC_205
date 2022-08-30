@@ -1,12 +1,12 @@
 public class EncodeDecode {
-    String[] originalList;
-    String[] encodedList;
-    String[] decodedList;
+   private String[] originalList;
+   private String[] encodedList;
+   private String[] decodedList;
 
     public EncodeDecode(String[] oL) {
         this.originalList = oL;
-        encodedList = new String[oL.length];
-        decodedList = new String[oL.length];
+        this.encodedList = new String[oL.length];
+        this.decodedList = new String[oL.length];
 
         //encode & decode methods are repeated for each array of strings
         for(int i=0;i < oL.length;i++) {
