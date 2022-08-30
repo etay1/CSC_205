@@ -74,6 +74,7 @@ public class EncodeDecode {
                     forwardch = (char) ascii;
                 } else {
                     ascii = ascii - 10;
+                    forwardch = (char) ascii;
                 }
             }
         }
