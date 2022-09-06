@@ -14,7 +14,7 @@ public class TextAnalyzer {
     public void analyzeText(String fileName) {
         //here we can initialize the br so we can use the io exception
         BufferedReader br = null;
-        String line = "";
+        String line = null;
 
         try {
             /*to save lines, instead of creating a fr for file reader
