@@ -31,7 +31,6 @@ public class TextAnalyzer {
     }
 
     public void findFrequency(String[] split) { //this method finds the frequency of chars in an array of strings
-        
         for(int i = 0 ; i< split.length ; i++ ) { //number of loops = word count
 
             String s = split[i].toUpperCase().replaceAll("[^A-Z]","");
@@ -39,12 +38,12 @@ public class TextAnalyzer {
 
             for(int j = 0 ; j < s.length() ; j++) { //number of loops = number of chars in current string (s[i])
                 char c = s.charAt(j);
-                //if A = 0 and pos=0 we increment the value
-                int pos = charMatch(c);
-                frequencyIncrementer(pos);
+                //if position = the ascii value of char c - 65
+                //assign pos to ascii value of char c - 65
+                int index = (int) c - 65;
+                frequencyIncrementer(index);
             }
         }
-
     }
 
     public void frequencyIncrementer(int index) {
@@ -53,7 +52,23 @@ public class TextAnalyzer {
                 frequencies[i] = frequencies[i] + 1;
     }
 
+    public int[] getFrequencies(){
+        return frequencies;
+    }
+
+    public int getLineCount() {
+        return lineCount;
+    }
+
+    public int getWordCount() {
+        return wordCount;
+    }
+}
+
+/*
     public int charMatch(char c) {
+     //   return (int) c - 65;
+
         if (c == 'A')
             return 0;
         else if (c == 'B')
@@ -110,16 +125,33 @@ public class TextAnalyzer {
             return -1;
 
     }
+*/
 
-    public int[] getFrequencies(){
-        return frequencies;
-    }
 
-    public int getLineCount() {
-        return lineCount;
-    }
-
-    public int getWordCount() {
-        return wordCount;
-    }
-}
+/*Frequency of A: 24
+Frequency of B: 0
+Frequency of C: 2
+Frequency of D: 10
+Frequency of E: 14
+Frequency of F: 2
+Frequency of G: 10
+Frequency of H: 16
+Frequency of I: 6
+Frequency of J: 0
+Frequency of K: 4
+Frequency of L: 18
+Frequency of M: 12
+Frequency of N: 14
+Frequency of O: 10
+Frequency of P: 12
+Frequency of Q: 0
+Frequency of R: 6
+Frequency of S: 10
+Frequency of T: 26
+Frequency of U: 14
+Frequency of V: 0
+Frequency of W: 2
+Frequency of X: 0
+Frequency of Y: 10
+Frequency of Z: 0
+*/
