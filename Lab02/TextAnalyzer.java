@@ -41,7 +41,7 @@ public class TextAnalyzer {
 
                 for(int k = 0 ; k < frequencies.length ; k++)
                     if(k == (int) c - 65)
-                        frequencies[k] = frequencies[k] + 1;
+                        frequencies[k]++;
 
             }
         }
