@@ -38,8 +38,7 @@ public class TextAnalyzer {
 
             for(int j = 0 ; j < s.length() ; j++) { //number of loops = number of chars in current string (s[i])
                 char c = s.charAt(j);
-                //if position = the ascii value of char c - 65
-                //assign pos to ascii value of char c - 65
+                //assign index to ascii value of char c - 65
                 int index = (int) c - 65;
                 frequencyIncrementer(index);
             }
