@@ -11,11 +11,10 @@ public class TextAnalyzer {
         this.lineCount = 0;
         this.wordCount = 0;
     }
+
     public void analyzeText(String fileName) {
-        //here we can initialize the br so we can use the io exception
         BufferedReader br = null;
         String line = null;
-        String text = "";
 
         try {
             br = new BufferedReader(new FileReader(fileName));
@@ -23,32 +22,30 @@ public class TextAnalyzer {
                 lineCount++;
                 String[] split = line.split(" ");
                 wordCount += split.length;
-                findFrequency(split);
+                frequencyCharCounter(split);
             }
         }   catch (IOException e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
-    public void findFrequency(String[] split) { //this method finds the frequency of chars in an array of strings
+    public void frequencyCharCounter(String[] split) { //this method finds the frequency of chars in an array of strings
         for(int i = 0 ; i< split.length ; i++ ) { //number of loops = word count
 
             String s = split[i].toUpperCase().replaceAll("[^A-Z]","");
             //s is assigned to each string (each word) and converted to all uppercase
 
-            for(int j = 0 ; j < s.length() ; j++) { //number of loops = number of chars in current string (s[i])
+            for(int j = 0; j < s.length(); j++) { //number of loops = number of chars in current string (s[i])
                 char c = s.charAt(j);
-                //assign index to ascii value of char c - 65
+                //assign index to ascii value of char c then we subtract it to get into our 0-25 range
                 int index = (int) c - 65;
-                frequencyIncrementer(index);
+
+                for(int k = 0 ; k < frequencies.length ; k++) //
+                    if(index == k)
+                        frequencies[k] = frequencies[k] + 1;
+
             }
         }
-    }
-
-    public void frequencyIncrementer(int index) {
-        for(int i = 0 ; i < frequencies.length ; i++)
-            if(index == i)
-                frequencies[i] = frequencies[i] + 1;
     }
 
     public int[] getFrequencies(){
@@ -65,6 +62,12 @@ public class TextAnalyzer {
 }
 
 /*
+     public void frequencyIncrementer(int index) {
+        for(int i = 0 ; i < frequencies.length ; i++)
+            if(index == i)
+                frequencies[i] = frequencies[i] + 1;
+    }
+
     public int charMatch(char c) {
      //   return (int) c - 65;
 
@@ -127,7 +130,9 @@ public class TextAnalyzer {
 */
 
 
-/*Frequency of A: 24
+/*
+Correct output example for humpty dumpty
+Frequency of A: 24
 Frequency of B: 0
 Frequency of C: 2
 Frequency of D: 10
