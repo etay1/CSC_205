@@ -29,19 +29,15 @@ public class TextAnalyzer {
         }
     }
 
-    public void frequencyCharCounter(String[] split) { //this method finds the frequency of chars in an array of strings
+    public void frequencyCharCounter(String[] split) {
         for(int i = 0 ; i< split.length ; i++ ) { //number of loops = word count
-
             String s = split[i].toUpperCase().replaceAll("[^A-Z]","");
-            //s is assigned to each string (each word) and converted to all uppercase
 
-            for(int j = 0; j < s.length(); j++) { //number of loops = number of chars in current string (s[i])
+            for(int j = 0; j < s.length(); j++) { //number of loops = number of chars in s
                 char c = s.charAt(j);
-                //assign index to ascii value of char c then we subtract it to get into our 0-25 range
-                int index = (int) c - 65;
-
-                for(int k = 0 ; k < frequencies.length ; k++) //
-                    if(index == k)
+                
+                for(int k = 0 ; k < frequencies.length ; k++)
+                    if(k == (int) c - 65)
                         frequencies[k] = frequencies[k] + 1;
 
             }
@@ -62,6 +58,9 @@ public class TextAnalyzer {
 }
 
 /*
+
+soo the new method does all of what is below in like 5 lines
+
      public void frequencyIncrementer(int index) {
         for(int i = 0 ; i < frequencies.length ; i++)
             if(index == i)
