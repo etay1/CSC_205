@@ -1,10 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
-
 
 public class TextAnalyzer {
     private int lineCount;
@@ -23,43 +19,41 @@ public class TextAnalyzer {
 
         try {
             br = new BufferedReader(new FileReader(fileName));
-
             while ((line = br.readLine()) != null) {
                 lineCount++;
                 String[] split = line.split(" ");
                 wordCount += split.length;
                 findFrequency(split);
-
             }
         }   catch (IOException e) {
            e.printStackTrace();
         }
     }
 
-    public void frequencies(int index) {
-        for(int i = 0 ; i < frequencies.length ; i++)
-            if(index == i)
-                frequencies[i] = frequencies[i] + 1;
-    }
-
-
     public void findFrequency(String[] split) { //this method finds the frequency of chars in an array of strings
+        
         for(int i = 0 ; i< split.length ; i++ ) { //number of loops = word count
 
             String s = split[i].toUpperCase().replaceAll("[^A-Z]","");
             //s is assigned to each string (each word) and converted to all uppercase
 
-            for(int j = 0 ; j < s.length() ; j++) { //number of loops = number of chars in current string
+            for(int j = 0 ; j < s.length() ; j++) { //number of loops = number of chars in current string (s[i])
                 char c = s.charAt(j);
                 //if A = 0 and pos=0 we increment the value
-                int pos = characterMatch(c);
-                frequencies(pos);
+                int pos = charMatch(c);
+                frequencyIncrementer(pos);
             }
         }
 
     }
 
-    public int characterMatch(char c) {
+    public void frequencyIncrementer(int index) {
+        for(int i = 0 ; i < frequencies.length ; i++)
+            if(index == i)
+                frequencies[i] = frequencies[i] + 1;
+    }
+
+    public int charMatch(char c) {
         if (c == 'A')
             return 0;
         else if (c == 'B')
