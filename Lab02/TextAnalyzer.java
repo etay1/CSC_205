@@ -34,7 +34,7 @@ public class TextAnalyzer {
 
     public void frequencyCharCounter(String[] split) {
         for(int i = 0 ; i< split.length ; i++ ) { //number of loops = word count
-            String s = split[i].toUpperCase().replaceAll("[^A-Z]","");
+            String s = split[i].toUpperCase();
 
             for(int j = 0; j < s.length(); j++) { //number of loops = number of chars in s
                 char c = s.charAt(j);
@@ -42,7 +42,6 @@ public class TextAnalyzer {
                 for(int k = 0 ; k < frequencies.length ; k++)
                     if(k == (int) c - 65)
                         frequencies[k]++;
-
             }
         }
     }
