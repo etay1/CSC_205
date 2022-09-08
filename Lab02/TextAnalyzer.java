@@ -25,6 +25,9 @@ public class TextAnalyzer {
                 frequencyCharCounter(split);
             }
         }   catch (IOException e) {
+            System.out.println("File not found:  \nPossible issues " +
+                                "\nCheck if input is spelled properly .txt included" +
+                                "\nCheck if text files are in lab folder");
             e.printStackTrace();
         }
     }
@@ -38,7 +41,7 @@ public class TextAnalyzer {
 
                 for(int k = 0 ; k < frequencies.length ; k++)
                     if(k == (int) c - 65)
-                        frequencies[k]++;
+                        frequencies[k] = frequencies[k] + 1;
 
             }
         }
