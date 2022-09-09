@@ -1,0 +1,115 @@
+/*Sample 1*/
+Enter the name of the file: 
+OldMcDonald.txt
+Number of Lines: 12
+Number of Words: 82
+Letter Counts
+Frequency of A: 38 
+Frequency of B: 0 
+Frequency of C: 5 
+Frequency of D: 22 
+Frequency of E: 38 
+Frequency of F: 6 
+Frequency of G: 1 
+Frequency of H: 22 
+Frequency of I: 25 
+Frequency of J: 0 
+Frequency of K: 8 
+Frequency of L: 8 
+Frequency of M: 18 
+Frequency of N: 23 
+Frequency of O: 41 
+Frequency of P: 1 
+Frequency of Q: 0 
+Frequency of R: 18 
+Frequency of S: 2 
+Frequency of T: 6 
+Frequency of U: 0 
+Frequency of V: 2 
+Frequency of W: 5 
+Frequency of X: 0 
+Frequency of Y: 2 
+Frequency of Z: 0 
+
+/*----------------------*/
+
+/*Sample 2*/
+Enter the name of the file: 
+HumptyDumpty.txt
+Number of Lines: 8
+Number of Words: 54
+Letter Counts
+Frequency of A: 24 
+Frequency of B: 0 
+Frequency of C: 2 
+Frequency of D: 10 
+Frequency of E: 14 
+Frequency of F: 2 
+Frequency of G: 10 
+Frequency of H: 16 
+Frequency of I: 6 
+Frequency of J: 0 
+Frequency of K: 4 
+Frequency of L: 18 
+Frequency of M: 12 
+Frequency of N: 14 
+Frequency of O: 10 
+Frequency of P: 12 
+Frequency of Q: 0 
+Frequency of R: 6 
+Frequency of S: 10 
+Frequency of T: 26 
+Frequency of U: 14 
+Frequency of V: 0 
+Frequency of W: 2 
+Frequency of X: 0 
+Frequency of Y: 10 
+Frequency of Z: 0 
+
+/*-----------------------*/
+
+/*Sample 3 fail*/
+Enter the name of the file: 
+asdf
+File not found:  
+Possible issues 
+Check if input is spelled properly .txt included
+Check if text files are in lab folder
+Number of Lines: 0
+Number of Words: 0
+Letter Counts
+java.io.FileNotFoundException: asdf (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:212)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:154)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:109)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at TextAnalyzer.analyzeText(TextAnalyzer.java:24)
+	at TextAnalyzerTester.main(TextAnalyzerTester.java:10)
+Frequency of A: 0 
+Frequency of B: 0 
+Frequency of C: 0 
+Frequency of D: 0 
+Frequency of E: 0 
+Frequency of F: 0 
+Frequency of G: 0 
+Frequency of H: 0 
+Frequency of I: 0 
+Frequency of J: 0 
+Frequency of K: 0 
+Frequency of L: 0 
+Frequency of M: 0 
+Frequency of N: 0 
+Frequency of O: 0 
+Frequency of P: 0 
+Frequency of Q: 0 
+Frequency of R: 0 
+Frequency of S: 0 
+Frequency of T: 0 
+Frequency of U: 0 
+Frequency of V: 0 
+Frequency of W: 0 
+Frequency of X: 0 
+Frequency of Y: 0 
+Frequency of Z: 0 
+/*------------------*/
