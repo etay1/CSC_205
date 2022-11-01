@@ -63,7 +63,6 @@ public class Part {
 
     If the names and weights are the same, then it returns 0.
      */
-
     public int compareTo(Part other) {
 
         if (this.partName.compareToIgnoreCase(other.partName) > 0)

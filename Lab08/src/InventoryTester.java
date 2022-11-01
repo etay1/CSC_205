@@ -3,7 +3,7 @@ public class InventoryTester {
     {
         Inventory myInventory = new Inventory();
 
-/*
+
         //------------------name    color    weight   price amountInStock reOpt
         myInventory.sortedInsert
                 (new Part("bolt",  "red",     7.0,   8.50, 200, 300));
@@ -59,7 +59,7 @@ public class InventoryTester {
         System.out.println("Number of cogs in stock:   " +
                 myInventory.numPartsInStock("cog"));
         System.out.println("Reorder List = " + myInventory.reOrderList());
-*/
+
     }
 
 }
