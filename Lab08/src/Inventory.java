@@ -7,29 +7,30 @@ public class Inventory {
 
 // need to double check this logic its 4am and i shot
     public void sortedInsert(Part part) {
-/*
-        if (inventoryList.size() != 0) {
-            for (int i = 0; i < inventoryList.size() - 1; i++)
-                if (part.compareTo(inventoryList.get(i)) > 0)
-                    inventoryList.add(part);
-        } else {*/
+
+        //if (inventoryList.size() != 0) {
+          //  for (int i = 0; i < inventoryList.size() - 1; i++)
+            //    if (part.compareTo(inventoryList.get(i)) > 0)
+               //     inventoryList.add(part);
+        //} else {
             inventoryList.add(part);
-       // }
+           // System.out.println("Inventory list size = " + inventoryList.size());
+        //}
 
     }
 
     public double totalInventoryValue() {
         double total = 0;
 
-        for(int i = 0; i < inventoryList.size() - 1; i++)
+        for(int i = 0; i <= inventoryList.size() - 1; i++)
             total += inventoryList.get(i).getValue();
 
         return total;
     }
 
     public String searchByColor(String s) {
-        String res = null;
-        for(int i = 0; i < inventoryList.size() - 1; i++) {
+        String res = "";
+        for(int i = 0; i <= inventoryList.size() - 1; i++) {
             if(s.compareToIgnoreCase(inventoryList.get(i).getColor()) == 0)
                res += inventoryList.get(i).toString();
         }
@@ -41,7 +42,7 @@ public class Inventory {
         double temp = inventoryList.get(0).getWeight();
 
         //Bubble Compare
-        for(int i = 1; i < inventoryList.size(); i++) {
+        for(int i = 1; i <= inventoryList.size() - 1; i++) {
             if (inventoryList.get(i).getWeight() > temp) {
                 hP = i;
                 temp = inventoryList.get(i).getWeight();
@@ -54,8 +55,8 @@ public class Inventory {
     public int numPartsInStock(String s) {
         int res = 0;
 
-        for(int i = 0; i < inventoryList.size() - 1; i++)
-            if(s.compareToIgnoreCase(inventoryList.get(i).getPartName())==0)
+        for(int i = 0; i <= inventoryList.size() - 1; i++)
+            if(s.equalsIgnoreCase((inventoryList.get(i).getPartName())))
                 res += inventoryList.get(i).getAmountInStock();
 
         return res;
@@ -64,7 +65,7 @@ public class Inventory {
     public String reOrderList() {
         ArrayList<Part> reOrderedList = new ArrayList<Part>();
 
-        for (int i = 0; i < inventoryList.size() - 1; i++)
+        for (int i = 0; i <= inventoryList.size() - 1; i++)
             if(inventoryList.get(i).getAmountInStock() < inventoryList.get(i).getReorderPoint())
                 reOrderedList.add(inventoryList.get(i));
 

@@ -87,13 +87,13 @@ public class Part {
 
     @Override
     public String toString() {
-        return  "Part Name = " + partName +
-                "Color = " + color  +
-                "Weight = " + weight +
-                "Price = " + price +
-                "Amount In Stock = " + amountInStock +
-                "ReorderPoint = " + reorderPoint +
-                "Total Value = " + getValue() +
-                '}' + "\n";
+        return "Part{" +
+                "partName='" + partName + '\'' +
+                ", color='" + color + '\'' +
+                ", weight=" + weight +
+                ", price=" + price +
+                ", amountInStock=" + amountInStock +
+                ", reorderPoint=" + reorderPoint +
+                "}\n";
     }
 }

@@ -26,6 +26,7 @@ public class InventoryTester {
         myInventory.sortedInsert
                 (new Part("cog",   "black",   1.0,   1.50, 300, 400));
 
+
         System.out.println("------------------------------------------------");
         System.out.println("Testing search by color");
         System.out.println("Red Parts: \n" + myInventory.searchByColor("red"));
