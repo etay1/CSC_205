@@ -1,22 +1,41 @@
 import java.util.*;
 
 public class Inventory {
-    private ArrayList<Part> inventoryList = new ArrayList<Part>();
+    ArrayList<Part> inventoryList = new ArrayList<Part>();
 
 
 
-// need to double check this logic its 4am and i shot
+/* if size is 0, just add part
+ * else, if the part to be added is "less than" the first part in list,
+ * add part to the beginning of list.
+ * else, if the part to be added is "greater than" the last part in list,
+ * add part to the end of the list.
+ * else, loop through each part in list, while the part to be added is
+ * "greater than" the part being checked, keep going.
+ * Break when the part to be added is "less than" the part being checked
+ * and add part at that index. 
+*/
     public void sortedInsert(Part part) {
 
-        //if (inventoryList.size() != 0) {
-          //  for (int i = 0; i < inventoryList.size() - 1; i++)
-            //    if (part.compareTo(inventoryList.get(i)) > 0)
-               //     inventoryList.add(part);
-        //} else {
-            inventoryList.add(part);
-           // System.out.println("Inventory list size = " + inventoryList.size());
-        //}
-
+          if(inventoryList.size() != 0) {
+        	  
+        	  if(part.compareTo(inventoryList.get(0)) < 0) {
+        		  inventoryList.add(0, part);
+        	  }else if(part.compareTo(inventoryList.get(inventoryList.size()-1)) > 0) {
+        		  inventoryList.add(inventoryList.size(),part);
+        	  }else {
+        		  int i = 0;
+        		  while(part.compareTo(inventoryList.get(i)) > 0) {
+        			  i++;
+        		  }
+        		  inventoryList.add(i,part);
+        	  }
+        	  
+          }else {
+        	  inventoryList.add(part);
+          }
+         
+    	
     }
 
     public double totalInventoryValue() {
