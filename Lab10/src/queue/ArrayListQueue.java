@@ -63,15 +63,13 @@ public class ArrayListQueue<T> implements IQueue<T>
     }
 */
     public boolean equals(ArrayListQueue<T> queue) {
-        if (this.size() != queue.size() ) {
-            //System.out.println("Different size");
+        if (this.size() != queue.size() )
             return false;
-        }
-        for(int i = 0; i < this.size(); i++){
-            if (!body.get(i).equals(queue.body.get(i))) {
+
+        for(int i = 0; i < this.size(); i++)
+            if (!body.get(i).equals(queue.body.get(i)))
                 return false;
-            }
-        }
+
         return true;
     }
 

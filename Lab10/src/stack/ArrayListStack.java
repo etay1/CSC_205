@@ -107,15 +107,13 @@ public class ArrayListStack<T> implements IStack<T>
 
 */
         public boolean equals(ArrayListStack<T> stack) {
-            if (this.size() != stack.size() ) {
-                //System.out.println("Different size");
+            if (this.size() != stack.size() )
                 return false;
-            }
-            for(int i = 0; i < this.size(); i++){
-                if (!stackBody.get(i).equals(stack.stackBody.get(i))) {
+
+            for(int i = 0; i < this.size(); i++)
+                if (!stackBody.get(i).equals(stack.stackBody.get(i)))
                     return false;
-                }
-            }
+
             return true;
         }
 

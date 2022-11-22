@@ -1,6 +1,6 @@
 package queue;
-import stack.ArrayListStack;
 
+import stack.ArrayListStack;
 import java.util.*;
 
 public class StackQueueTester {
@@ -19,15 +19,15 @@ public class StackQueueTester {
         ArrayList<String> S2 = new ArrayList<String>(Arrays.asList(dataForS2.split(" ")));
         ArrayList<String> S3 = new ArrayList<String>(Arrays.asList(dataForS3.split(" ")));
 
-        for(String str : S1)
+        for(String str : S1) {
             s1.push(str);
-
-        for(String str : S2)
+        }
+        for(String str : S2) {
             s2.push(str);
-
-        for(String str : S3)
+        }
+        for(String str : S3) {
             s3.push(str);
-
+        }
 
         /*----------------------------------------------------------------------------------------------------------------------*/
 
@@ -68,6 +68,8 @@ public class StackQueueTester {
         System.out.println("q1 equals q2: " + q1.equals(q2));
         System.out.println("q1 equals q3: " + q1.equals(q3));
         System.out.println("q2 equals q3: " + q2.equals(q3));
+
+
 
     }
 
