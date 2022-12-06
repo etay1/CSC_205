@@ -110,7 +110,7 @@ public class PostfixEvaluator
     private Token calculate(Token opr, Token opd1, Token opd2)
     {
         // Get the first char from opr, it is the operator: +, -, ...
-        char ch = opr.getBody().charAt(0);
+        String ch = opr.getBody();
 
         //Get the two operands by converting from String to int
         int op1 = Integer.parseInt(opd1.getBody());
@@ -122,21 +122,67 @@ public class PostfixEvaluator
         //Perform the operation, and set a value for res
         switch (ch)
         {
-            case '+' : res = op1+op2;break;
-            case '-' : res = op1-op2;break;
-            case '*' : res = op1*op2;break;
-            case '/' : if (op2 != 0)
+            case "+" : res = op1+op2;break;
+            case "-" : res = op1-op2;break;
+            case "*" : res = op1*op2;break;
+            case "/" : if (op2 != 0)
                 res = op1/op2;
             else
                 System.out.println("Division by zero error in"+
                         " PostfixEvaluator.calculate().");
                 break;
-            case '%' : if (op2 != 0)
+            case "%" : if (op2 != 0)
                 res = op1%op2;
             else
                 System.out.println("Division by zero error in"+
                         " PostfixEvaluator.calculate().");
                 break;
+
+            case "<" :
+                if (op1 < op2)
+                    res = 1;
+                else res = 0;
+                break;
+            case "<=" :
+                if (op1 <= op2)
+                    res = 1;
+                else res = 0;
+                break;
+            case ">" :
+                if (op1 > op2)
+                    res = 1;
+                else res = 0;
+
+                break;
+            case ">=" :
+                if (op1 >= op2)
+                    res = 1;
+                else res = 0;
+                break;
+            case "==" :
+                if (op1 == op2)
+                    res = 1;
+                else res = 0;
+                break;
+            case "!=" :
+                if (op1 != op2)
+                    res = 1;
+                else res = 0;
+                break;
+            case "&&" :
+                if (op1 > 0 && op2 > 0)
+                    res = 1;
+                else res = 0;
+
+                break;
+            case "||" :
+                if ((op1 > 0 || op2 > 0))
+                    res = 1;
+                else res = 0;
+                break;
+
+
+
             default: System.out.println("Illegal Operator in "+
                     "PostfixEvaluator.calculate()");
         }

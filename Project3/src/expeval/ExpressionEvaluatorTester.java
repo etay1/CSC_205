@@ -20,8 +20,44 @@ public class ExpressionEvaluatorTester
                         new Expression("10 * 5 + 3 "),
                         new Expression("10 * ( 7 + ( 12 - 9 ) ) / 10  "),
                         new Expression("100 % ( ( 3 + 2 ) + 3 ) / 4 "),
-                       // new Expression("10 > 5 && 5 > 2"),
-                       // new Expression("2==3 || 2!=2"),
+                        new Expression("1 < 5"),
+                        new Expression("1 == 2"),
+                        new Expression("1 != 0"),
+                        new Expression("1 > 2"),
+                        new Expression("1 >= 2"),
+                        new Expression("1 <= 2"),
+                        new Expression("1 && 2"),
+                        new Expression("1 || 0"),
+                        new Expression("0 || 0"),
+                        new Expression("-1 && -2"),
+                        new Expression("-2 || 0"),
+                        new Expression("25 || 26"),
+                        new Expression("25 || 0"),
+                        new Expression("25 && 26"),
+                        new Expression("25 || 0"),
+                        new Expression("25 && 26"),
+                        new Expression("25 || 26 && 0"),
+                        new Expression("( 25 || 26 ) && 0"),
+                        new Expression("1 < 2 && 2 < 3"),
+                        new Expression("1 < 2 && 2 > 3"),
+                        new Expression("1 < 2 || 2 < 3"),
+                        new Expression("1 < 2 || 2 > 3"),
+                        new Expression("1 > 2 || 2 > 3"),
+                        new Expression("1 < 2 < 3"),
+                        new Expression("1 > 2 > 3"),
+                        new Expression("1 < 2 + 5"),
+                        new Expression("( 1 < 2 ) + 5"),
+                        new Expression("2 < 3 * 5 + 4"),
+                        new Expression("( 2 < 3 ) * ( 5 + 4 )"),
+                        new Expression("( 2 < 3 * 5 ) + 4"),
+                        new Expression("( 25 + ( 10 > 5 ) * 3 ) % 6"),
+                        new Expression("( 25 < 8 < 9 ) + ( 8 * 3 > 2 )"),
+                        new Expression("2 + 3 != 5 < 6 > 4 || 8 && 9 * 4 / 2"),
+                        new Expression("25 + 45"),
+                        new Expression("10 * ( 5 + 3 )"),
+                        new Expression("20"),
+                        new Expression("5 * 5 + 3"),
+                        new Expression("100 % ( ( 3 + 2 ) + 3 ) / 4")
                 };
 
         //Instantiate an ExpressionEvaluator
@@ -34,9 +70,7 @@ public class ExpressionEvaluatorTester
             System.out.println
                     ("Infix Expression:       " + testExpressions[i]);
             System.out.println
-                    ("Value of Expression:" +
-                            "+ee.evaluate(testExpressions[i])" + "\n\n"
-                    + ee.evaluate(testExpressions[i]));
+                    ("Value of Expression:    " + ee.evaluate(testExpressions[i]));
         }
     }
 }

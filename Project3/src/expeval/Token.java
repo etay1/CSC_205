@@ -14,7 +14,7 @@ public class Token
     //It classifies the following as "OPERATORS". If you need more,
     //you have to change this
     private final static String[] validOperators =
-            {"+","-","*","/","%"};
+            {"+","-","*","/","%","<", "<=", ">", ">=", "==", "!=", "&&", "||"};
 
     //-------------------------------------------------------------
     private String body;
